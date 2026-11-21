@@ -6,4 +6,6 @@ const router = Router()
 //! /api/v1/users/
 router.post("/", userController.createUser);
 
+router.get("/", userController.getAllUsers);
+
 export const userRoute = router
