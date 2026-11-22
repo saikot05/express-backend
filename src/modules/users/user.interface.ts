@@ -4,6 +4,7 @@ export interface IUser {
     password: string;
     age?: number | null;
     is_Active?: boolean;
+    role?: string;
 }
 
 export type IUpdateUser = Partial<Pick<IUser, "name" | "password" | "age" | "is_Active" >>
