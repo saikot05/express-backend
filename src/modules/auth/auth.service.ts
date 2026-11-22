@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import { pool } from "../../db";
 import jwt from "jsonwebtoken";
 import config from "../../config";
+import { userRoute } from "../users/user.route";
 
 const loginUserIntoDB = async(payload: {email: string; password: string})=>{
     //? 1.check if the user exist
@@ -31,6 +32,7 @@ const loginUserIntoDB = async(payload: {email: string; password: string})=>{
         id: user.rows[0].id,
         name: user.rows[0].name,
         email: user.rows[0].email,
+        role: user.rows[0].role,
     }
 
     const accessToken = jwt.sign(jwtPayload, config.jwt_secret, {expiresIn: "1d",});
