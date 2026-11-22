@@ -2,8 +2,10 @@ import type { NextFunction, Request, Response } from "express";
 import jwt, { type JwtPayload } from 'jsonwebtoken';
 import config from "../config";
 import { pool } from "../db";
+import type { Role } from "../types";
 
-const auth = (...roles : any)=> {
+
+const auth = (...roles : Role[])=> {
   return async(req: Request, res: Response, next: NextFunction) => {
   //console.log(roles)
   //! 1-> Check if the token exist
@@ -38,6 +40,16 @@ const auth = (...roles : any)=> {
     res.status(403).json({
         success: false,
         message: "Forbidden!",
+    })
+  }
+
+  //? roles = ["admin","agent","user"]
+  //? user.role = "admin"
+
+  if(roles.length && !roles.includes(user.rows[0].role)){
+    res.status(401).json({
+        success: false,
+        message: "Unauthorized access!",
     })
   }
 
