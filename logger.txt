@@ -40,3 +40,19 @@ Method : GET | URL : /api/v1/users | Time : 1795354774549
 Method : GET | URL : /api/v1/users | Time : 1795354829087
 
 Method : GET | URL : /api/v1/users | Time : 1795354834832
+
+Method : GET | URL : /api/v1/users | Time : 1795355359175
+
+Method : POST | URL : /api/v1/auth/login | Time : 1795355416172
+
+Method : GET | URL : /api/v1/users | Time : 1795355666904
+
+Method : GET | URL : /api/v1/users | Time : 1795355717013
+
+Method : GET | URL : /api/v1/users | Time : 1795355771029
+
+Method : GET | URL : /api/v1/users | Time : 1795364772489
+
+Method : GET | URL : /api/v1/users | Time : 1795364811603
+
+Method : GET | URL : /api/v1/users | Time : 1795364840108
