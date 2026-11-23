@@ -10,6 +10,7 @@ import { userRoute } from './modules/users/user.route';
 import { profileRouter } from './modules/profile/profile.route';
 import { authRoute } from './modules/auth/auth.route';
 import logger from './middleware/logger';
+import globalErrorHandler from './middleware/globalErrorHandler';
 
 const app : Application = express();
 
@@ -29,5 +30,7 @@ app.get("/", (req: Request,res: Response) =>{
         author: "PH",
     })
 });
+
+app.use(globalErrorHandler);
 
 export default app;
